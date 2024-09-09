@@ -30,14 +30,14 @@ CREATE TABLE Salaries (
 );
 
 CREATE TABLE Employee_Department (
-  emp_id int NOT NULL,
+  emp_id int primary key,
   dep_id VARCHAR(30) NOT NULL,
   foreign key (emp_id) references Employee(emp_id),
   foreign key (dep_id) references Department(dep_id) 
 );
 
 CREATE TABLE Department_Manager (
-  dep_id VARCHAR(30) NOT NULL,
+  dep_id VARCHAR(30) primary key,
   emp_id int NOT NULL,
   foreign key (dep_id) references Department(dep_id),
   foreign key (emp_id) references Employee(emp_id) 
